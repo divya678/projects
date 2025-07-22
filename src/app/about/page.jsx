@@ -133,27 +133,27 @@ const About = () => {
                 </div>
 
                 {/* Author Image */}
-                <div className="top_author_image">
+                <div className="top_author_image rounded-lg shadow-xl shadow-gray-500/40 p-6">
                   <Image
                     src="/img/slider/1.jpg"
-                    alt="Adriano Smith"
+                    alt="Baldev Bharti"
                     width={400}
                     height={400}
                     layout="responsive"
-                    className="author_image"
+                    className="author_image rounded-xl"
                   />
                 </div>
 
                 {/* Name and Role */}
                 <div className="about_title">
-                  <h3>Adriano Smith</h3>
+                  <h3>Baldev Bharti</h3>
                   <span>Web Developer</span>
                 </div>
 
                 {/* Bio */}
                 <div className="about_text">
                   <p>
-                    Hi, my name is Adriano Smith and I began using WordPress
+                    Hi, my name is Baldev Bharti and I began using WordPress
                     when it first began. I’ve spent most of my waking hours for
                     the last ten years designing, programming and operating
                     WordPress sites.
@@ -176,7 +176,7 @@ const About = () => {
                       <ul>
                         <li>
                           <span>Birthday:</span>
-                          <span>01.07.1990</span>
+                          <span>15.07.1995</span>
                         </li>
                         <li>
                           <span>Age:</span>
@@ -184,18 +184,18 @@ const About = () => {
                         </li>
                         <li>
                           <span>Address:</span>
-                          <span>Ave 11, New York, USA</span>
+                          <span>Rudraprayag, Chopta, Uttrakhand, India</span>
                         </li>
                         <li>
                           <span>Email:</span>
                           <span>
-                            <a href="mailto:tokyo@gmail.com">tokyo@gmail.com</a>
+                            <a href="mailto:tokyo@gmail.com">bhartiomi343@gmail.com</a>
                           </span>
                         </li>
                         <li>
                           <span>Phone:</span>
                           <span>
-                            <a href="tel:+770221770505">+77 022 177 05 05</a>
+                            <a href="tel:+770221770505">+91 9772841243</a>
                           </span>
                         </li>
                       </ul>
@@ -206,20 +206,14 @@ const About = () => {
                       <ul>
                         <li>
                           <span>Nationality:</span>
-                          <span>USA</span>
+                          <span>Indian</span>
                         </li>
-                        <li>
-                          <span>Study:</span>
-                          <span>University of Texas</span>
-                        </li>
+
                         <li>
                           <span>Degree:</span>
-                          <span>Master</span>
+                          <span>Bachelor in Management Study(BHM)</span>
                         </li>
-                        <li>
-                          <span>Interest:</span>
-                          <span>Playing Football</span>
-                        </li>
+
                         <li>
                           <span>Freelance:</span>
                           <span>Available</span>

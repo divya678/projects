@@ -48,7 +48,7 @@ const Home = () => {
 
               {/* Details */}
               <div className="details">
-                <h3 className="name">Adriano Smith</h3>
+                <h3 className="name">Baldev Bharti</h3>
                 <h4 className="typer">
                   <span style={{ color: "#555", fontWeight: 500 }}>
                     <Typewriter

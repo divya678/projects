@@ -1,10 +1,19 @@
 "use client";
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
-import React from "react";
+import React, { useState } from "react";
+import { GoPaperclip } from "react-icons/go";
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 
 const Contact = () => {
   const { register, handleSubmit, reset } = useForm();
+  const [fileName, setFileName] = useState("");
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) setFileName(file.name);
+  };
   const onSubmit = async (data) => {
     try {
       const result = await emailjs.send(
@@ -47,6 +56,7 @@ const Contact = () => {
                     className="contact_form"
                     id="myForm"
                     onSubmit={handleSubmit(onSubmit)}
+                    encType="multipart/form-data"
                   >
                     <div className="first">
                       <ul>
@@ -64,11 +74,44 @@ const Contact = () => {
                             {...register("user_email", { required: true })}
                           />
                         </li>
-                        <li>
+                        <li className="relative w-full max-w-md">
+                      
                           <textarea
-                            placeholder="Message"
-                            {...register("message", { required: true })}
+                            name="message"
+                            placeholder="Your message..."
+                            rows={6}
+                             {...register("message", { required: true })}
+                            // className="w-full p-4 pr-10 rounded border border-gray-300 focus:outline-none"
                           />
+
+                          {/* Hidden File Input */}
+                          <input
+                            type="file"
+                            id="attachment"
+                            className="hidden"
+                            onChange={handleFileChange}
+                          />
+
+                          {/* Paperclip Icon as Label */}
+
+                          <label
+                            data-tooltip-id="my-tooltip"
+                            data-tooltip-content="Attach a file "
+                            htmlFor="attachment"
+                            className="absolute top-3 right-6 cursor-pointer bg-gray-700"
+                          >
+
+                            <GoPaperclip className="w-8 h-8 text-gray-500 hover:text-gray-700 cursor-pointer" />
+
+
+                          </label>
+                          <Tooltip id="my-tooltip" />
+                          {/* Optional: Show File Name */}
+                          {fileName && (
+                            <p className="text-sm mt-2 text-gray-500 truncate">
+                              📎 Attached: {fileName}
+                            </p>
+                          )}
                         </li>
                       </ul>
                     </div>

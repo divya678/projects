@@ -23,12 +23,15 @@
   display: none !important;
 }
 
-
 /* body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 } */
+
+button {
+  border-radius: 5px !important;
+}
 
 .slick-list,
 .slick-slider {
@@ -830,6 +833,7 @@ input[type="button"] {
   padding: 12px 40px;
   transition: all 0.3s ease;
   text-decoration: none;
+  border-radius: 5px;
 }
 
 .tokyo_tm_about .top_author_image {
@@ -920,7 +924,7 @@ input[type="button"] {
   float: left;
   margin-right: 10px;
   font-weight: 700;
-  color: #ca2a30;
+  color: #333;
 }
 
 .tokyo_tm_info ul li a {
@@ -1403,7 +1407,7 @@ input[type="button"] {
   border-radius: 100%;
   background-color: rgba(0, 0, 0, 0.03);
   font-weight: 700;
-  color: #ca2a30;
+  color: #333;
   font-family: Montserrat;
   transition: all 0.3s ease;
 }
@@ -1729,7 +1733,7 @@ body {
   word-wrap: break-word;
   font-weight: 400;
   background-color: #f8f8f8;
-  color: #767676;
+  color: #333;
   box-sizing: border-box;
 }
 
@@ -1769,6 +1773,11 @@ h6 {
   font-family: Montserrat;
   color: #ca2a30;
 }
+
+.place h3{
+  color: #767676;
+}
+
 
 h1 {
   font-size: 45px;
@@ -1948,6 +1957,8 @@ h6 {
 }
 
 .tokyo_tm_all_wrap .leftpart .menu ul li a {
+  display: flex;
+  gap: 1rem;
   width: 100%;
   text-decoration: none;
   color: #767676;
@@ -2074,7 +2085,7 @@ h6 {
   position: relative;
 }
 
-.main-container{
+.main-container {
   display: flex;
   gap: 3rem;
 }
@@ -2353,7 +2364,7 @@ h6 {
   width: 100%;
   display: block;
   text-align: left;
-  color: #ca2a30;
+  color: #333;
   font-style: italic;
 }
 
@@ -2371,7 +2382,7 @@ h6 {
 
 .progress_inner .background .bar_in {
   height: 100%;
-  background: #ca2a30;
+  background: #767676;
   width: 0;
   overflow: hidden;
 }
@@ -2506,15 +2517,17 @@ h6 {
 
 .tokyo_tm_title span {
   display: inline-block;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: #333;
   text-transform: uppercase;
   padding: 4px 10px;
   font-weight: 600;
-  font-size: 12px;
-  color: #333;
+  font-size: 1rem;
+  opacity: 0.6;
+  color: #fff;
   font-family: Montserrat;
   letter-spacing: 0;
   margin-bottom: 15px;
+  border-radius: 5px;
 }
 
 .tokyo_tm_title .title_flex {
@@ -2819,7 +2832,7 @@ h6 {
   text-decoration: none;
   display: inline-block;
   overflow: hidden;
-  color: #ca2a30;
+  color: #333;
   padding-right: 32px;
   position: relative;
   text-transform: uppercase;
@@ -2832,7 +2845,7 @@ h6 {
 .tokyo_tm_read_more .read-more:before {
   position: absolute;
   content: "";
-  background-color: #ca2a30;
+  background-color: #333;
   margin: auto;
   width: 100%;
   height: 1px;
@@ -4894,7 +4907,7 @@ body.modal {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4907,5 +4920,5 @@ body.modal {
   border-radius: 12px;
   max-width: 500px;
   width: 90%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }

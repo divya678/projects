@@ -10,14 +10,17 @@ import About from "./about/page";
 import AOS from "aos";
 import { useEffect } from "react";
 import Portfolio from "./portfolio/page";
-// import { useTheme } from "next-themes";
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+  const router = useRouter();
+
   useEffect(() => {
     AOS.init({
       duration: 1200, // duration of animation
       once: true, // whether animation happens only once
     });
+    router.push("home");
   }, []);
 
   return (
