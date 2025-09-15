@@ -22,8 +22,8 @@ const About = () => {
     const rightColumn = items.slice(mid);
 
     return (
-      <div className="flex justify-between gap-80">
-        <ul className="w-1/2 pr-4">
+      <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-80">
+        <ul className="w-full md:w-1/2 md:pl-4">
           {leftColumn.map((item, index) => (
             <li key={`left-${index}`}>
               <div className="list_inner">
@@ -34,7 +34,7 @@ const About = () => {
             </li>
           ))}
         </ul>
-        <ul className="w-1/2 pl-4">
+        <ul className="w-full md:w-1/2 ">
           {rightColumn.map((item, index) => (
             <li key={`right-${index}`}>
               <div className="list_inner">

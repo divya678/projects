@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import { HomeIcon, UserIcon, CartIcon, SettingsIcon, DocumentIcon, MailboxIcon } from "../components/icons";
 
 const menuItems = [
@@ -10,7 +9,7 @@ const menuItems = [
   { name: "About", path: "/about", icon: UserIcon },
   { name: "Service", path: "/service", icon: SettingsIcon },
   { name: "Portfolio", path: "/portfolio", icon: CartIcon },
-  { name: "News", path: "/news", icon: DocumentIcon },
+  // { name: "News", path: "/news", icon: DocumentIcon },
   { name: "Contact", path: "/contact", icon: MailboxIcon},
 ];
 
