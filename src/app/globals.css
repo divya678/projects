@@ -3450,7 +3450,7 @@ body.modal {
 
   .tokyo_tm_all_wrap .rightpart {
     width: 100%;
-    margin: 0;
+    /* margin: 0; */
   }
 
   .tokyo_tm_partners {
