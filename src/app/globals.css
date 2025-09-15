@@ -2570,6 +2570,11 @@ h6 {
   padding-left: 50px;
 }
 
+.logo{
+  font-size: 3rem;
+  font-weight: bold;
+}
+
 @media (max-width: 576px) {
   .tokyo_tm_portfolio .portfolio_list li {
     margin: 0 0 30px;

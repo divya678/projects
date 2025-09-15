@@ -21,17 +21,18 @@ export default function Sidebar() {
     <div className="leftpart shadow-xl shadow-gray-500/40 p-6 rounded-lg">
       <div className="leftpart_inner">
         <div className="logo">
-          <a className="navbar-brand" href="/">
-            <Image
+          <a className="navbar-brand logo" href="/">
+          OMI
+            {/* <Image
               alt="brand"
-              src="/img/_img_logo_dark.png"
+              src="/img/_img_logo_dk.png"
               width={135}
               height={20}
               decoding="async"
               data-nimg={1}
               loading="lazy"
               style={{ color: "transparent" }}
-            />
+            /> */}
           </a>
         </div>
         <div className="menu">
