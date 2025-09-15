@@ -64,12 +64,16 @@ const About = () => {
   };
 
   const age = calculateAge("1995-07-15")
-  console.log(loading, "load", homeData)
+
 
   return (
     <>
       {loading ?
-        <PacmanLoader color="#f00" size={60} loading={true} /> :
+        <div className="rightpart" >  
+        {/* <PacmanLoader color="#f00" size={60} loading={true} /> */}
+        </div>
+
+        :
         <motion.div initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }} className="rightpart">

@@ -14,7 +14,7 @@ const Portfolio = () => {
     (desc);
   const closeModal = () => setDescription(null);
 
-  console.log("homeData in Portfolio:", description);
+ 
   return (
     <>
       {!loading &&
@@ -78,7 +78,7 @@ const Portfolio = () => {
                 exit={{ scale: 0.8, opacity: 0 }}
               >
                 <div className="modal-body flex flex-col md:flex-row ">
-                  <div style={{marginRight: '2rem'}}>
+                  <div className="dish-popup-image">
                     <Image
                       src={description?.desc_img}
                       alt={description?.name}

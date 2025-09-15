@@ -589,6 +589,18 @@ input[type="button"] {
   .modal-content{
     padding: 2rem !important;
   }
+  .tokyo_tm_portfolio .portfolio_list li .inner .entry .dish-name{
+    font-size: 2rem !important;
+  }
+  .dish-popup-image{
+    margin-right: 0 !important;
+    margin-bottom: 2rem;
+   
+  }
+  .dish-popup-image img{
+    width: 20rem;
+    height: 20rem;
+  }
 }
 
 .close-modal img {
@@ -598,6 +610,9 @@ input[type="button"] {
   position: absolute;
   filter: invert(1);
   transition: 0.3s;
+}
+.dish-popup-image{
+  margin-right: 2rem;
 }
 
 @media screen and (max-width: 575px) {
@@ -4969,6 +4984,7 @@ body.modal {
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  overflow: hidden;
 }
 
 .modal-content {
@@ -4982,6 +4998,8 @@ body.modal {
   align-items: center;
   gap: 1rem;
   flex-direction: column;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .dark .modal-content {

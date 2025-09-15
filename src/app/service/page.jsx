@@ -97,7 +97,9 @@ const Service = () => {
           {/* Toast Placeholder */}
           <div className="Toastify" />
         </> :
-        <PacmanLoader color="#f00" size={60} loading={true} />
+        <div className="rightpart" >  
+        {/* <PacmanLoader color="#f00" size={60} loading={true} /> */}
+        </div>
       }      </>
   );
 };
