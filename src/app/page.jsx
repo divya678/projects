@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import Portfolio from "./portfolio/page";
 import { useRouter } from 'next/navigation'
 
+
 export default function Home() {
   const router = useRouter();
 
@@ -24,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+   
       <div id="__next">
         <div className="tokyo_tm_all_wrap">
           <HomeComponent />
@@ -35,6 +36,6 @@ export default function Home() {
           <Contact />
         </div>
       </div>
-    </>
-  );
+
+  )
 }

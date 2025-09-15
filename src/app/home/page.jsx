@@ -2,7 +2,10 @@
 
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
+import { fetchHomeDetails } from "../utils";
+import { useHomeContext } from "../contextStore";
 
 const Home = () => {
   const socialLink = [
@@ -32,8 +35,12 @@ const Home = () => {
       alt: "tiktok",
     },
   ];
+  const { homeData, loading, error } = useHomeContext();
+
   return (
-    <div className="rightpart">
+    <motion.div initial={{ x: -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }} className="rightpart">
       <div className="rightpart_in">
         <section className="tokyo_tm_section">
           <div className="tokyo_tm_home">
@@ -42,21 +49,22 @@ const Home = () => {
               <div className="avatar">
                 <div
                   className="image avatar_img"
-                  style={{ backgroundImage: "url(/img/slider/1.jpg)" }}
+                  style={{
+                    backgroundImage: homeData && homeData[0]?.profile_image
+                      ? `URL(${homeData[0]?.profile_image})` // Correct URL format
+                      : 'none', // Optional fallback
+                  }}
                 />
               </div>
 
               {/* Details */}
               <div className="details">
-                <h3 className="name">Baldev Bharti</h3>
+                <h3 className="name">{homeData && homeData[0]?.Name}</h3>
                 <h4 className="typer">
-                  <span style={{ color: "#555", fontWeight: 500 }}>
+                  <span style={{ color: "#555", fontWeight: 500, textTransform: "capitalize" }}>
                     <Typewriter
-                      words={[
-                        "Full Stack Developer",
-                        "React Enthusiast",
-                        "UI/UX Designer",
-                      ]}
+                      words={homeData && homeData[0]?.skills
+                      }
                       loop={true}
                       cursor
                       cursorStyle="|"
@@ -67,8 +75,7 @@ const Home = () => {
                   </span>
                 </h4>
                 <p className="job">
-                  Creative Photographer based in New York and happy to travel
-                  all over Europe to capture photos.
+                  {homeData && homeData[0]?.descriptions}
                 </p>
 
                 {/* Social Links */}
@@ -95,7 +102,7 @@ const Home = () => {
 
       {/* Optional Toastify div if needed */}
       <div className="Toastify" />
-    </div>
+    </motion.div>
   );
 };
 

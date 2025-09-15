@@ -5,9 +5,10 @@ import React, { useState } from "react";
 import { GoPaperclip } from "react-icons/go";
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
+import { motion } from "framer-motion";
 
 const Contact = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const [fileName, setFileName] = useState("");
 
   const handleFileChange = (e) => {
@@ -37,7 +38,9 @@ const Contact = () => {
 
   return (
     <>
-      <div className="rightpart">
+      <motion.div initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }} className="rightpart">
         <div className="rightpart_in">
           <div className="tokyo_tm_section">
             <div className="container">
@@ -64,24 +67,34 @@ const Contact = () => {
                           <input
                             type="text"
                             placeholder="Name"
-                            {...register("name", { required: true })}
-                          />
+                            {...register("name", { required: "Name is required", minLength: { value: 2, message: "Minimum 2 characters" } })}
+                          /> {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+
                         </li>
                         <li>
                           <input
                             type="email"
                             placeholder="Email"
-                            {...register("user_email", { required: true })}
+                            {...register("user_email", {
+                              required: "Email is required",
+                              pattern: {
+                                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                message: "Enter a valid email",
+                              },
+                            })}
                           />
+                          {errors.user_email && <p className="text-red-500 text-sm">{errors.user_email.message}</p>}
                         </li>
                         <li className="relative w-full max-w-md">
-                      
+
                           <textarea
                             name="message"
                             placeholder="Your message..."
                             rows={6}
-                             {...register("message", { required: true })}
-                            // className="w-full p-4 pr-10 rounded border border-gray-300 focus:outline-none"
+                            {...register("message", {
+                              required: "Message is required",
+                              minLength: { value: 10, message: "Minimum 10 characters" },
+                            })}
                           />
 
                           {/* Hidden File Input */}
@@ -112,13 +125,17 @@ const Contact = () => {
                               📎 Attached: {fileName}
                             </p>
                           )}
+                          {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
                         </li>
                       </ul>
                     </div>
                     <div className="tokyo_tm_button">
-                      <button type="submit" className="ib-button">
+                      <motion.button whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                        type="submit" className="ib-button">
                         Send Message
-                      </button>
+                      </motion.button>
                     </div>
                   </form>
                 </div>
@@ -126,7 +143,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div className="Toastify" />
     </>
   );

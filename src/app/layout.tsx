@@ -5,6 +5,7 @@ import Sidebar from "./compoenent/sideBar";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import ThemeSwitch from "./compoenent/themeSwitch";
+import { HomeProvider } from "./contextStore";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,17 +39,23 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="tokyo_tm_all_wrap">
+            
             <ThemeSwitch />
             <Header />
             <div className="main-container" style={{ display: "flex" }}>
+               <HomeProvider>
               <Sidebar />
 
               {children}
+              </HomeProvider>
             </div>
           </div>
+          
         </ThemeProvider>
+    
       </body>
     </html>
   );

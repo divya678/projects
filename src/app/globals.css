@@ -826,7 +826,7 @@ input[type="button"] {
   animation: myAnim 2s 0.6s infinite;
 }
 
-.tokyo_tm_button a {
+.tokyo_tm_button {
   color: #fff;
   display: inline-block;
   background-color: #ca2a30;
@@ -837,16 +837,21 @@ input[type="button"] {
 }
 
 .tokyo_tm_about .top_author_image {
-  width: 100%;
-  height: auto;
+  width: 95%;
   clear: both;
-  float: left;
   position: relative;
+  height: 68rem;
   margin-bottom: 35px;
+  overflow: hidden;
 }
 
 .tokyo_tm_about .top_author_image img {
+  position: unset !important;
   min-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: 0 -16rem;
+  padding: 2rem;
 }
 
 .tokyo_tm_about .about_title {
@@ -856,7 +861,8 @@ input[type="button"] {
   float: left;
   border-bottom: 1px solid #dfdfdf;
   padding-bottom: 20px;
-  margin-bottom: 27px;
+  margin: 27px 0;
+  text-transform: capitalize;
 }
 
 .tokyo_tm_about .about_title h3 {
@@ -1049,7 +1055,7 @@ input[type="button"] {
 
 .tokyo_tm_resumebox,
 .tokyo_tm_resumebox .in {
-  width: 100%;
+  width: 95%;
   height: auto;
   clear: both;
   float: left;
@@ -1580,7 +1586,7 @@ input[type="button"] {
   background-color: #fff;
 }
 
-.tokyo_tm_pricing .tokyo_tm_button a {
+.tokyo_tm_pricing .tokyo_tm_button {
   padding: 8px 40px;
 }
 
@@ -1774,10 +1780,9 @@ h6 {
   color: #ca2a30;
 }
 
-.place h3{
+.place h3 {
   color: #767676;
 }
-
 
 h1 {
   font-size: 45px;
@@ -2111,10 +2116,11 @@ h6 {
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
-  animation: morph 8s ease-in-out 1s infinite;
+  /* animation: morph 8s ease-in-out 1s infinite; */
   background-blend-mode: multiply;
   box-shadow: inset 0 0 0 9px hsla(0, 0%, 100%, 0.3);
-  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  /* border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; */
+  border-radius: 50%;
   overflow: hidden;
 }
 
@@ -2273,19 +2279,18 @@ h6 {
 }
 
 .tokyo_tm_button {
-  width: 100%;
   height: auto;
   clear: both;
   float: left;
 }
 
 .ib-button,
-.tokyo_tm_button a {
+.tokyo_tm_button {
   text-decoration: none;
   color: #fff;
   display: inline-block;
   background-color: #ca2a30;
-  padding: 11px 40px;
+  padding:8px 40px;
   transition: all 0.3s ease;
 }
 
@@ -2302,7 +2307,7 @@ h6 {
 }
 
 .ib-button:hover,
-.tokyo_tm_button a:hover {
+.tokyo_tm_button:hover {
   letter-spacing: 2px;
 }
 
@@ -2340,6 +2345,7 @@ h6 {
   font-weight: 700;
   color: #ca2a30;
   font-size: 20px;
+  text-transform: capitalize;
 }
 
 .tokyo_progress {
@@ -2541,7 +2547,7 @@ h6 {
 
 .tokyo_tm_portfolio,
 .tokyo_tm_portfolio .list_wrapper {
-  width: 100%;
+  width: 95%;
   height: auto;
   clear: both;
   float: left;
@@ -2577,6 +2583,7 @@ h6 {
   float: left;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .tokyo_tm_portfolio .portfolio_list li .inner .entry,
@@ -2588,12 +2595,33 @@ h6 {
 .tokyo_tm_portfolio .portfolio_list li .inner .entry:hover img,
 .tokyo_tm_portfolio .portfolio_list li .inner a:hover img {
   transform: scale(1.1);
+  opacity: 0.3;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.tokyo_tm_portfolio .portfolio_list li .inner .entry:hover .dish-name {
+  opacity: 1; /* Show the text on hover */
+  transform: translateY(-50%) translateX(0); /* Slide the text in from the left */
+}
+.tokyo_tm_portfolio .portfolio_list li .inner .entry .dish-name {
+  position: absolute;
+  top: 50%; /* Adjust as needed */
+ width: 100%;
+ justify-content: center;
+  display: flex;
+  transform: translate(-100%, -50%);
+  color: #D14938;
+  font-size: 3rem;
+  font-weight: bold;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, transform 0.5s ease; /* Smooth transition for opacity and sliding */
+  z-index: 10; /* Ensure the text is above the image */
 }
 
 .tokyo_tm_portfolio .portfolio_list li .inner img {
   width: 100%;
   height: 415px;
-  object-fit: cover;
+  object-fit: contain;
   cursor: pointer;
   transition: 0.5s;
 }
@@ -3389,9 +3417,27 @@ body.modal {
 
 @media (max-width: 1600px) {
   .tokyo_tm_all_wrap .leftpart {
-    width: 22%;
+    width: 270px;
     padding: 0 40px;
     background: #fefefe;
+  }
+
+  .tokyo_tm_all_wrap .rightpart {
+    width: 100%;
+    margin: 0;
+  }
+
+  .tokyo_tm_partners {
+    padding: 10px 0px;
+  }
+
+  .main-container {
+    gap: unset;
+  }
+
+  .tokyo_tm_progressbox,
+  .tokyo_tm_resumebox {
+    padding: 25px 1rem;
   }
 
   /* .tokyo_tm_section {
@@ -4640,7 +4686,7 @@ body.modal {
   color: #fff;
 }
 
-.dark .tokyo_tm_button a {
+.dark .tokyo_tm_button{
   background: #fff;
   color: #000;
 }
@@ -4916,9 +4962,13 @@ body.modal {
 
 .modal-content {
   background: #fff;
-  padding: 2rem;
+  padding: 4rem;
   border-radius: 12px;
-  max-width: 500px;
+  max-width: 950px;
   width: 90%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
 }
