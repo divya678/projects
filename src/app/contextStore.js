@@ -35,15 +35,7 @@ export const HomeProvider = ({ children }) => {
 
 
     useEffect(() => {
-        // const fetchHomeDetails = async () => {
-        //   const { data, error } = await supabase.from('Home').select('*');
-        //   if (error) {
-        //     setError(error?.message);
-        //   } else {
-        //     setHomeData(data);
-        //   }
-        //   setLoading(false);
-        // };
+
 
         fetchHomeDetails();
     }, [data]);

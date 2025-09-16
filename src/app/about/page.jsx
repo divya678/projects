@@ -135,10 +135,7 @@ const About = () => {
                             <span>Birthday:</span>
                             <span>{homeData[0]?.details?.birthday}</span>
                           </li>
-                          <li>
-                            <span>Age:</span>
-                            <span>{age}</span>
-                          </li>
+                     
                           <li>
                             <span>Address:</span>
                             <span>{homeData[0]?.details?.address}</span>

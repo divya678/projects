@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import ThemeSwitch from "./compoenent/themeSwitch";
 import { HomeProvider } from "./contextStore";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,6 +52,7 @@ export default function RootLayout({
 
               {children}
               </HomeProvider>
+               <Toaster position="top-right" reverseOrder={false} />
             </div>
           </div>
           

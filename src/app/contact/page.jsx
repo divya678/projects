@@ -6,33 +6,39 @@ import { GoPaperclip } from "react-icons/go";
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
 import { motion } from "framer-motion";
+import PacmanLoader from "react-spinners/PacmanLoader";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const [fileName, setFileName] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) setFileName(file.name);
   };
   const onSubmit = async (data) => {
+    setLoading(true);
     try {
       const result = await emailjs.send(
-        "service_0kwriud", // e.g. "service_123abc"
+        "service_7utzj6c", // e.g. "service_123abc"
         "template_pbs3hb4", // e.g. "template_contact"
         {
           from_name: data.name,
           from_email: data.user_email,
           message: data.message,
         },
-        "MUxLsgxuMqKGmMace" // e.g. "user_abc123XYZ"
+        "MUxLsgxuMqKGmMace" // e.g. "user_abc123XYZ public key"
       );
-
-      alert("Message sent successfully!");
+      toast.success("Message sent successfully!");
       reset();
+      setFileName("");
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       console.error("Failed to send message:", error);
-      alert("Failed to send message. Please try again later.");
+      toast.success("Failed to send message. Please try again later.");
     }
   };
 
@@ -120,7 +126,7 @@ const Contact = () => {
                           </label>
                           <Tooltip id="my-tooltip" />
                           {/* Optional: Show File Name */}
-                          {fileName && (
+                          {(fileName || fileName!== "") && (
                             <p className="text-sm mt-2 text-gray-500 truncate">
                               📎 Attached: {fileName}
                             </p>
@@ -130,12 +136,20 @@ const Contact = () => {
                       </ul>
                     </div>
                     <div className="tokyo_tm_button">
-                      <motion.button whileHover={{ scale: 1.05 }}
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 300 }}
-                        type="submit" className="ib-button">
-                        Send Message
+                        type="submit"
+                        className="ib-button"
+                      >
+                        {loading ? (
+                          <PacmanLoader color="#fff" size={20} loading={true} />
+                        ) : (
+                          "Send Message"
+                        )}
                       </motion.button>
+
                     </div>
                   </form>
                 </div>
@@ -144,7 +158,7 @@ const Contact = () => {
           </div>
         </div>
       </motion.div>
-      <div className="Toastify" />
+
     </>
   );
 };

@@ -583,9 +583,7 @@ input[type="button"] {
     right: -10px;
     top: -37px;
   }
-  .tokyo_tm_about .top_author_image{
-  display: none;
-  }
+
   .modal-content{
     padding: 2rem !important;
   }
@@ -861,7 +859,7 @@ input[type="button"] {
   width: 95%;
   clear: both;
   position: relative;
-  height: 68rem;
+  height: auto;
   margin-bottom: 35px;
   overflow: hidden;
 }
@@ -871,8 +869,6 @@ input[type="button"] {
   min-width: 100%;
   height: auto;
   object-fit: cover;
-  object-position: 0 -16rem;
-  padding: 2rem;
 }
 
 .tokyo_tm_about .about_title {
