@@ -2115,6 +2115,7 @@ h6 {
 .tokyo_tm_home .home_content {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .tokyo_tm_home .avatar {
@@ -2347,10 +2348,11 @@ h6 {
   margin-bottom: 92px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .tokyo_tm_modalbox_about .my_box {
     margin-bottom: 60px;
   }
+ 
 }
 
 .tokyo_tm_modalbox_about .my_box .left {
@@ -4234,6 +4236,9 @@ body.modal {
 
   .leftpart.active {
     transform: translateX(0);
+  }
+   .tokyo_tm_all_wrap .rightpart {
+    margin: 0 !important; 
   }
 }
 
