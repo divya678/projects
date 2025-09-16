@@ -584,18 +584,17 @@ input[type="button"] {
     top: -37px;
   }
 
-  .modal-content{
+  .modal-content {
     padding: 2rem !important;
   }
-  .tokyo_tm_portfolio .portfolio_list li .inner .entry .dish-name{
+  .tokyo_tm_portfolio .portfolio_list li .inner .entry .dish-name {
     font-size: 2rem !important;
   }
-  .dish-popup-image{
+  .dish-popup-image {
     margin-right: 0 !important;
     margin-bottom: 2rem;
-   
   }
-  .dish-popup-image img{
+  .dish-popup-image img {
     width: 20rem;
     height: 20rem;
   }
@@ -609,8 +608,13 @@ input[type="button"] {
   filter: invert(1);
   transition: 0.3s;
 }
-.dish-popup-image{
+.dish-popup-image {
   margin-right: 2rem;
+  width: 30%;
+}
+
+.modal-body {
+  width: 70%;
 }
 
 @media screen and (max-width: 575px) {
@@ -849,7 +853,8 @@ input[type="button"] {
   color: #fff;
   display: inline-block;
   background-color: #ca2a30;
-  padding: 12px 40px;
+  padding: 12px 20px;
+  width: 20%;
   transition: all 0.3s ease;
   text-decoration: none;
   border-radius: 5px;
@@ -1604,7 +1609,7 @@ input[type="button"] {
 }
 
 .tokyo_tm_pricing .tokyo_tm_button {
-  padding: 8px 40px;
+  padding: 8px 20px;
 }
 
 .tokyo_tm_pricing .list {
@@ -2308,14 +2313,16 @@ h6 {
   color: #fff;
   display: inline-block;
   background-color: #ca2a30;
-  padding:8px 40px;
+  padding: 8px 20px;
   transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
 }
 
 .ib-button {
   font-size: 15px;
   line-height: 15px;
-  padding: 19px 40px;
+  padding: 19px 20px;
   border: none;
   cursor: pointer;
 }
@@ -2352,7 +2359,6 @@ h6 {
   .tokyo_tm_modalbox_about .my_box {
     margin-bottom: 60px;
   }
- 
 }
 
 .tokyo_tm_modalbox_about .my_box .left {
@@ -2589,7 +2595,7 @@ h6 {
   padding-left: 50px;
 }
 
-.logo{
+.logo {
   font-size: 3rem;
   font-weight: bold;
 }
@@ -2630,12 +2636,12 @@ h6 {
 .tokyo_tm_portfolio .portfolio_list li .inner .entry .dish-name {
   position: absolute;
   top: 50%; /* Adjust as needed */
- width: 100%;
- justify-content: center;
+  width: 100%;
+  justify-content: center;
   display: flex;
   transform: translate(-100%, -50%);
-  color: #D14938;
-  font-size: 3rem;
+  color: #d14938;
+  font-size: 2.5rem;
   font-weight: bold;
   opacity: 0; /* Initially hidden */
   transition: opacity 0.3s ease, transform 0.5s ease; /* Smooth transition for opacity and sliding */
@@ -2646,7 +2652,7 @@ h6 {
   width: 100%;
   height: 415px;
   object-fit: contain;
-  /* cursor: pointer; */
+  cursor: pointer;
   transition: 0.5s;
 }
 
@@ -4237,8 +4243,8 @@ body.modal {
   .leftpart.active {
     transform: translateX(0);
   }
-   .tokyo_tm_all_wrap .rightpart {
-    margin: 0 !important; 
+  .tokyo_tm_all_wrap .rightpart {
+    margin: 0 !important;
   }
 }
 
@@ -4713,7 +4719,7 @@ body.modal {
   color: #fff;
 }
 
-.dark .tokyo_tm_button{
+.dark .tokyo_tm_button {
   background: #fff;
   color: #000;
 }
@@ -4998,11 +5004,15 @@ body.modal {
   display: flex;
   align-items: center;
   gap: 1rem;
-  flex-direction: column;
+  /* flex-direction: row; */
   max-height: 90vh;
   overflow-y: auto;
 }
 
+.tokyo_tm_portfolio .modal-content {
+  flex-direction: row !important;
+}
+
 .dark .modal-content {
-   background: #000 ;
+  background: #000;
 }

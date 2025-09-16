@@ -44,7 +44,7 @@ const Portfolio = () => {
                         {/* {homeData[0]?.portfolio_image.map((item) => ( */}
                         {homeData[0]?.portfolio_image.map((item) => (
                           <li key={item.id}>
-                            <div className="inner">
+                            <div className="inner" onClick={() => openModal(item)}>
                               <div className="entry tokyo_tm_portfolio_animation_wrap">
                                 <Image
                                   src={item?.image}
@@ -55,7 +55,7 @@ const Portfolio = () => {
                                   className="rounded-lg"
                                   loading="lazy"
                                 />
-                                <div className="dish-name cursor-pointer" onClick={() => openModal(item)}>{item?.name}</div>
+                                <div className="dish-name cursor-pointer">{item?.name}</div>
                               </div>
                             </div>
                           </li>
@@ -71,13 +71,12 @@ const Portfolio = () => {
           {description && (
             <div className="modal-overlay" onClick={closeModal}>
               <motion.div
-                className="modal-content flex flex-col"
+                className="modal-content flex flex-row"
                 onClick={(e) => e.stopPropagation()}
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
               >
-                <div className="modal-body flex flex-col md:flex-row ">
                   <div className="dish-popup-image">
                     <Image
                       src={description?.desc_img}
@@ -89,12 +88,15 @@ const Portfolio = () => {
                       loading="lazy"
                     />
                   </div>
-                  <div className="flex flex-col items-center gap-4">
+                <div className="modal-body flex flex-col md:flex-col gap-4 items-center ">
+              
+                  <div className="flex flex-col items-center gap-4 ">
                     <h2>{description.name}</h2>
                     <p className="text-lg pl-5">{description.description}</p>
                   </div>
-                </div>
+              
                 <button className="tokyo_tm_button" onClick={closeModal}>Close</button>
+                  </div>
               </motion.div>
             </div>
           )}
